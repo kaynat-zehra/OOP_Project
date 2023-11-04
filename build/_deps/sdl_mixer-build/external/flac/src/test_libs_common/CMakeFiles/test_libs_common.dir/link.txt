@@ -1,0 +1,2 @@
+C:/Strawberry/c/bin/ar.exe qc libtest_libs_common.a CMakeFiles/test_libs_common.dir/file_utils_flac.c.obj CMakeFiles/test_libs_common.dir/metadata_utils.c.obj
+C:/Strawberry/c/bin/ranlib.exe libtest_libs_common.a

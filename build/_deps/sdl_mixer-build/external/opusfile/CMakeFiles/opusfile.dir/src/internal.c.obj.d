@@ -1,0 +1,35 @@
+_deps/sdl_mixer-build/external/opusfile/CMakeFiles/opusfile.dir/src/internal.c.obj: \
+ C:/Users/Pakistani/Desktop/C224/folder1/CS224-HW3-Fall2023/HUMania/build/_deps/sdl_mixer-src/external/opusfile/src/internal.c \
+ C:/Users/Pakistani/Desktop/C224/folder1/CS224-HW3-Fall2023/HUMania/build/_deps/sdl_mixer-src/external/opusfile/src/internal.h \
+ C:/Strawberry/c/x86_64-w64-mingw32/include/stdlib.h \
+ C:/Strawberry/c/x86_64-w64-mingw32/include/crtdefs.h \
+ C:/Strawberry/c/x86_64-w64-mingw32/include/_mingw.h \
+ C:/Strawberry/c/x86_64-w64-mingw32/include/_mingw_mac.h \
+ C:/Strawberry/c/x86_64-w64-mingw32/include/_mingw_secapi.h \
+ C:/Strawberry/c/x86_64-w64-mingw32/include/vadefs.h \
+ C:/Strawberry/c/x86_64-w64-mingw32/include/sdks/_mingw_directx.h \
+ C:/Strawberry/c/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
+ C:/Strawberry/c/lib/gcc/x86_64-w64-mingw32/8.3.0/include-fixed/limits.h \
+ C:/Strawberry/c/lib/gcc/x86_64-w64-mingw32/8.3.0/include-fixed/syslimits.h \
+ C:/Strawberry/c/x86_64-w64-mingw32/include/limits.h \
+ C:/Strawberry/c/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
+ C:/Strawberry/c/x86_64-w64-mingw32/include/malloc.h \
+ C:/Users/Pakistani/Desktop/C224/folder1/CS224-HW3-Fall2023/HUMania/build/_deps/sdl_mixer-src/external/opusfile/include/opusfile.h \
+ C:/Strawberry/c/lib/gcc/x86_64-w64-mingw32/8.3.0/include/stdarg.h \
+ C:/Strawberry/c/x86_64-w64-mingw32/include/stdarg.h \
+ C:/Strawberry/c/x86_64-w64-mingw32/include/_mingw_stdarg.h \
+ C:/Strawberry/c/x86_64-w64-mingw32/include/stdio.h \
+ C:/Strawberry/c/x86_64-w64-mingw32/include/_mingw_print_push.h \
+ C:/Strawberry/c/x86_64-w64-mingw32/include/_mingw_off_t.h \
+ C:/Strawberry/c/x86_64-w64-mingw32/include/swprintf.inl \
+ C:/Strawberry/c/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
+ C:/Strawberry/c/x86_64-w64-mingw32/include/_mingw_print_pop.h \
+ C:/Users/Pakistani/Desktop/C224/folder1/CS224-HW3-Fall2023/HUMania/build/_deps/sdl_mixer-src/external/ogg/include/ogg/ogg.h \
+ C:/Strawberry/c/lib/gcc/x86_64-w64-mingw32/8.3.0/include/stddef.h \
+ C:/Strawberry/c/x86_64-w64-mingw32/include/stddef.h \
+ C:/Users/Pakistani/Desktop/C224/folder1/CS224-HW3-Fall2023/HUMania/build/_deps/sdl_mixer-src/external/ogg/include/ogg/os_types.h \
+ C:/Strawberry/c/x86_64-w64-mingw32/include/sys/types.h \
+ C:/Users/Pakistani/Desktop/C224/folder1/CS224-HW3-Fall2023/HUMania/build/_deps/sdl_mixer-src/external/opus/include/opus_multistream.h \
+ C:/Users/Pakistani/Desktop/C224/folder1/CS224-HW3-Fall2023/HUMania/build/_deps/sdl_mixer-src/external/opus/include/opus.h \
+ C:/Users/Pakistani/Desktop/C224/folder1/CS224-HW3-Fall2023/HUMania/build/_deps/sdl_mixer-src/external/opus/include/opus_types.h \
+ C:/Users/Pakistani/Desktop/C224/folder1/CS224-HW3-Fall2023/HUMania/build/_deps/sdl_mixer-src/external/opus/include/opus_defines.h
