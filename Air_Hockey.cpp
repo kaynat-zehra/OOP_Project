@@ -1,5 +1,5 @@
 #include<iostream>
-#include "HUMania.hpp"
+#include "AirHockey.hpp"
 #include <vector>
 using namespace std;
 
