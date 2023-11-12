@@ -1,5 +1,5 @@
 #include "game.hpp"
-// #include "HUMania.hpp"
+#include "Air_Hockey.hpp"
 bool Game::init()
 {
 	//Initialization flag
@@ -134,7 +134,7 @@ void Game::run( )
 			//this is a good location to add pigeon in linked list.
 				int xMouse, yMouse;
 				SDL_GetMouseState(&xMouse,&yMouse);
-				// createObject(xMouse, yMouse);
+				createObject(xMouse, yMouse);
 			}
 		}
 
@@ -142,7 +142,7 @@ void Game::run( )
 		SDL_RenderCopy(gRenderer, gTexture, NULL, NULL);//Draws background to renderer
 		//***********************draw the objects here********************
 
-		// drawObjects(gRenderer, assets);
+		drawObjects(gRenderer, assets);
 
 		//****************************************************************
     	SDL_RenderPresent(gRenderer); //displays the updated renderer
