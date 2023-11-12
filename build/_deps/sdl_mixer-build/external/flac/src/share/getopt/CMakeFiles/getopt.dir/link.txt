@@ -1,2 +1,0 @@
-C:/Strawberry/c/bin/ar.exe qc libgetopt.a CMakeFiles/getopt.dir/getopt.c.obj CMakeFiles/getopt.dir/getopt1.c.obj
-C:/Strawberry/c/bin/ranlib.exe libgetopt.a

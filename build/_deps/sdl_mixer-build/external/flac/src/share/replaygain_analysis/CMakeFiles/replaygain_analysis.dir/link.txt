@@ -1,2 +1,0 @@
-C:/Strawberry/c/bin/ar.exe qc libreplaygain_analysis.a CMakeFiles/replaygain_analysis.dir/replaygain_analysis.c.obj
-C:/Strawberry/c/bin/ranlib.exe libreplaygain_analysis.a

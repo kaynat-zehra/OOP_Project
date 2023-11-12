@@ -1,2 +1,0 @@
-C:/Strawberry/c/bin/ar.exe qc libogg.a CMakeFiles/ogg.dir/src/bitwise.c.obj CMakeFiles/ogg.dir/src/framing.c.obj
-C:/Strawberry/c/bin/ranlib.exe libogg.a

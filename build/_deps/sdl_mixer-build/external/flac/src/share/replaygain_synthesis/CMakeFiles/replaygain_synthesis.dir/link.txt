@@ -1,2 +1,0 @@
-C:/Strawberry/c/bin/ar.exe qc libreplaygain_synthesis.a CMakeFiles/replaygain_synthesis.dir/replaygain_synthesis.c.obj
-C:/Strawberry/c/bin/ranlib.exe libreplaygain_synthesis.a
