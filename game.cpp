@@ -60,7 +60,7 @@ bool Game::loadMedia()
 	// //Loading success flag
 	bool success = true;
 	
-	assets = loadTexture("assets.png");
+	assets = loadTexture("objects2.png");
     gTexture = loadTexture("background.png");
 	if(assets==NULL || gTexture==NULL)
     {
