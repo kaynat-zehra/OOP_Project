@@ -18,6 +18,8 @@ target_include_directories(${APP_NAME} PUBLIC ${sdl_SOURCE_DIR}/include ${sdl_mi
 target_link_libraries(${APP_NAME} SDL2::SDL2main SDL2::SDL2-static SDL2_image::SDL2_image-static SDL2_mixer::SDL2_mixer-static)
 
 file(COPY ${PROJECT_SOURCE_DIR}/assets.png DESTINATION ${PROJECT_BINARY_DIR})
+file(COPY ${PROJECT_SOURCE_DIR}/objects2.png DESTINATION ${PROJECT_BINARY_DIR})
+
 file(COPY ${PROJECT_SOURCE_DIR}/assets.svg DESTINATION ${PROJECT_BINARY_DIR})
-file(COPY ${PROJECT_SOURCE_DIR}/hu.png DESTINATION ${PROJECT_BINARY_DIR})
+file(COPY ${PROJECT_SOURCE_DIR}/background.png DESTINATION ${PROJECT_BINARY_DIR})
 file(COPY ${PROJECT_SOURCE_DIR}/pigeon.mp3 DESTINATION ${PROJECT_BINARY_DIR})
