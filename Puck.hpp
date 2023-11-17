@@ -3,7 +3,8 @@
 
 class Puck{
     public:
+    void set_coordinates(int x,int y);
     private:
     Puck_struct puck;
-    double velocity
+    double velocity;
 };
