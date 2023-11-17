@@ -1,14 +1,14 @@
 #include <iostream>
 
 struct Puck_struct{
-    double get_coordinates(){
+    int get_coordinates(){
         return (x_coordinate,y_coordinate);
     }
-    double get_radius(){
+    int get_radius(){
         return radius;
     }
     private:
-    double x_coordinate;
-    double y_coordinate;
-    double radius;
+    int x_coordinate;
+    int y_coordinate;
+    int radius{36};
 };
