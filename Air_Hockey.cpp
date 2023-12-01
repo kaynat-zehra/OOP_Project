@@ -13,13 +13,15 @@ using namespace std;
 // Unit puck={{72,72,119,101},{506-82,293-60,70,50}};
 Puck p;
 AIPaddle ai;
-
+PlayerPaddle p1;
 void drawObjects(SDL_Renderer* gRenderer, SDL_Texture* assets){
 
                     p.draw(gRenderer,assets);
                     p.Update();
                     ai.draw(gRenderer,assets);
                     ai.Update_paddle();
+                    p1.draw(gRenderer,assets);
+                    p1.Update_paddle();
                     // SDL_RenderCopy(gRenderer, assets, &paddle1.srcRect, &paddle1.moverRect);
                     // SDL_RenderCopy(gRenderer, assets, &paddle2.srcRect, &paddle2.moverRect);
                     // SDL_RenderCopy(gRenderer, assets, &p.srcRect, &p.moverRect);   

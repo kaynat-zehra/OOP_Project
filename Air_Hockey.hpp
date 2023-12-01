@@ -2,7 +2,7 @@
 #include<SDL.h>
 #include "Puck.hpp"
 #include "AI_Paddle.hpp"
-
+#include "player_paddle.hpp"
 
 void drawObjects(SDL_Renderer* gRnderer, SDL_Texture* assets);
 void createObject(int x, int y);
