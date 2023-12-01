@@ -143,7 +143,7 @@ void Game::run( )
 		//***********************draw the objects here********************
 
 		drawObjects(gRenderer, assets);
-		updatePuckPosition();
+		// updatePuckPosition();
 		//****************************************************************
     	SDL_RenderPresent(gRenderer); //displays the updated renderer
 
