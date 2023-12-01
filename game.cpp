@@ -130,19 +130,31 @@ void Game::run( )
 				quit = true;
 			}
 
+			// if(e.type == SDL_MOUSEBUTTONDOWN){
+			// //this is a good location to add pigeon in linked list.
+			// 	int xMouse, yMouse;
+			// 	SDL_GetMouseState(&xMouse,&yMouse);
+			// 	createObject(xMouse, yMouse);
+			// }
+			
+			// if(e.type == SDL_KEYDOWN){
 			if(e.type == SDL_MOUSEBUTTONDOWN){
 			//this is a good location to add pigeon in linked list.
 				int xMouse, yMouse;
 				SDL_GetMouseState(&xMouse,&yMouse);
 				createObject(xMouse, yMouse);
 			}
+			if(e.type == SDL_KEYDOWN){	
+						move(gRenderer, assets, e.key.keysym.sym);	
+				}
 		}
 
 		SDL_RenderClear(gRenderer); //removes everything from renderer
 		SDL_RenderCopy(gRenderer, gTexture, NULL, NULL);//Draws background to renderer
 		//***********************draw the objects here********************
-
+		
 		drawObjects(gRenderer, assets);
+		is_collision();
 		// updatePuckPosition();
 		//****************************************************************
     	SDL_RenderPresent(gRenderer); //displays the updated renderer

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 // #include "paddle.hpp"
 #include "AI_Paddle.hpp"
 
@@ -7,10 +8,27 @@ AIPaddle::AIPaddle(){
     moverRect = {30,212,34,130};
 }
 
-void AIPaddle::Update_paddle(){
-    moverRect.x += 0;
-    moverRect.y += 100;
+void AIPaddle::Update_aipaddle(){
+    // moverRect.x += 0;
+    int speed[2] = {50, -50};
+    int r = rand() %2;
+    // std::cout << r << std::endl;
+    static int AIvelocity = speed[r];
+    moverRect.y += AIvelocity;
 
-    moverRect.y = moverRect.h/2;
+    if (moverRect.y + moverRect.h >599){
+            AIvelocity = -AIvelocity;
+            moverRect.y -= 50;
+
+    } 
+    if (moverRect.y + moverRect.h/5 <0){
+            AIvelocity = -AIvelocity;
+            moverRect.y += 50;
+
+    }
+    
+    
+
+    // moverRect.y = moverRect.h/2;
 }
 
