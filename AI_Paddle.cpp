@@ -6,6 +6,8 @@
 AIPaddle::AIPaddle(){
     srcRect = {ai_paddle.x_coordinate, ai_paddle.y_coordinate, ai_paddle.paddle_w, ai_paddle.paddle_h};
     moverRect = {30,212,34,130};
+    // moverRect = {30,50,34,130};
+
 }
 
 void AIPaddle::Update_aipaddle(){

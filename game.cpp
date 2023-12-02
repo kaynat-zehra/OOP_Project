@@ -61,6 +61,7 @@ bool Game::loadMedia()
 	bool success = true;
 	
 	assets = loadTexture("objects2.png");
+	assets2 = loadTexture("numbers.png");
     gTexture = loadTexture("background.png");
 	if(assets==NULL || gTexture==NULL)
     {
@@ -75,6 +76,8 @@ void Game::close()
 	//Free loaded images
 	SDL_DestroyTexture(assets);
 	assets=NULL;
+	SDL_DestroyTexture(assets2);
+	assets2=NULL;
 	SDL_DestroyTexture(gTexture);
 	
 	//Destroy window
@@ -153,7 +156,7 @@ void Game::run( )
 		SDL_RenderCopy(gRenderer, gTexture, NULL, NULL);//Draws background to renderer
 		//***********************draw the objects here********************
 		
-		drawObjects(gRenderer, assets);
+		drawObjects(gRenderer, assets,assets2);
 		is_collision();
 		// updatePuckPosition();
 		//****************************************************************

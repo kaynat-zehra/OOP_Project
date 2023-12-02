@@ -7,8 +7,10 @@ PlayerPaddle::PlayerPaddle(){
     moverRect = {970-34,212,34,130};
 }
 void PlayerPaddle::LimitMovement() {
-    if (moverRect.y <= 0) {
-            moverRect.y = 0+moverRect.h;
+    if (moverRect.y + moverRect.h/5 <= 0) {
+            // moverRect.y = 0+moverRect.h;
+            // AIvelocity = -AIvelocity;
+            moverRect.y += moverRect.h;
         }
         if (moverRect.y + moverRect.h >= 600) {
             moverRect.y = 600 - moverRect.h;
