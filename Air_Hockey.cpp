@@ -14,6 +14,10 @@ using namespace std;
 Puck p;
 AIPaddle ai;
 PlayerPaddle p1;
+AiScore ais;
+Score ps;
+int aiscores=0;
+int scores=0;
 void drawObjects(SDL_Renderer* gRenderer, SDL_Texture* assets){
 
                     p.draw(gRenderer,assets);
@@ -22,6 +26,10 @@ void drawObjects(SDL_Renderer* gRenderer, SDL_Texture* assets){
                     ai.Update_paddle();
                     p1.draw(gRenderer,assets);
                     p1.Update_paddle();
+                    ais.draw(gRenderer,assets);
+                    ais.aiscore_set(aiscores);
+                    ps.draw(gRenderer,assets);
+                    ps.score_set(scores);
                     // SDL_RenderCopy(gRenderer, assets, &paddle1.srcRect, &paddle1.moverRect);
                     // SDL_RenderCopy(gRenderer, assets, &paddle2.srcRect, &paddle2.moverRect);
                     // SDL_RenderCopy(gRenderer, assets, &p.srcRect, &p.moverRect);   

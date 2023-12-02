@@ -3,10 +3,10 @@
 #include "score_struct.hpp"
 #include "Unit.hpp"
 
-class Score:public Unit{
+class AiScore:public Unit{
     public:
-    Score();
-    void score_set(int scores);
+    AiScore();
+    void aiscore_set(int scores);
     private:
-    score_struct s;
+    score_struct as;
 };

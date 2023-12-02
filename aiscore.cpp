@@ -1,11 +1,11 @@
 #include <iostream>
-#include "score.hpp"
+#include "aiscore.hpp"
 
-Score::Score(){
+AiScore::AiScore(){
     srcRect={};
-    moverRect={250,s.y_coordinate,s.w,s.h};
+    moverRect={750,as.y_coordinate,as.w,as.h};
 }
-void Score::score_set(int scores){
+void AiScore::aiscore_set(int scores){
     switch (scores){
         case 0:
         srcRect={};
