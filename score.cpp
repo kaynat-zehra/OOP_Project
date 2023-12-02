@@ -2,19 +2,19 @@
 #include "score.hpp"
 
 Score::Score(){
-    srcRect={};
+    srcRect={211,76,31,58};
     moverRect={250,s.y_coordinate,s.w,s.h};
 }
 void Score::score_set(int scores){
     switch (scores){
         case 0:
-        srcRect={};
+        srcRect={211,76,31,58};
         break;
         case 1:
         srcRect={21,15,6,50};
         break;
         case 2:
-        srcRect={};
+        srcRect={60,13,29,45};
         break;
         case 3:
         srcRect={};
