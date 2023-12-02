@@ -23,8 +23,8 @@ void drawObjects(SDL_Renderer* gRenderer, SDL_Texture* assets, SDL_Texture* asse
                     ai.Update_aipaddle();
                     // ai.Update_paddle(gRenderer, assets, key);
                     player.draw(gRenderer,assets);
-                    p.call_goal_p(gRenderer,assets2, p.get_s_player());
-                    p.call_goal_ai(gRenderer,assets2, p.get_ai_player());
+                    p.call_goal_p(gRenderer,assets2, p.get_ai_player());
+                    p.call_goal_ai(gRenderer,assets2, p.get_s_player());
 
                     // player.Update_paddle();
                     // SDL_RenderCopy(gRenderer, assets, &paddle1.srcRect, &paddle1.moverRect);
