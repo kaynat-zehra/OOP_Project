@@ -11,7 +11,7 @@ void Score::score_set(int scores){
         srcRect={};
         break;
         case 1:
-        srcRect={};
+        srcRect={21,15,6,50};
         break;
         case 2:
         srcRect={};
