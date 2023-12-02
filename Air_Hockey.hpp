@@ -3,11 +3,13 @@
 #include "Puck.hpp"
 #include "AI_Paddle.hpp"
 #include "player_paddle.hpp"
-#include "score.hpp"
-#include "aiscore.hpp"
+
+
 
 void drawObjects(SDL_Renderer* gRnderer, SDL_Texture* assets);
 void createObject(int x, int y);
+void move(SDL_Renderer* gRenderer, SDL_Texture* assets, SDL_Keycode key);
+void is_collision();				
 // void updatePuckPosition();
 
 // struct Unit{

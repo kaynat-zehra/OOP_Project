@@ -23,15 +23,12 @@ Puck::Puck(){
     srcRect = {puck.x_coordinate, puck.y_coordinate, puck.puck_w, puck.puck_h};
     moverRect = {500-50+2,300-40+2,70,50};
 }
+    static int puckVelocityX = 200/2;
+    static int puckVelocityY = 100/2;
 
 void Puck::Update()
 {
-    
- 
-
     // Add velocity variables for the puck's movement
-    static int puckVelocityX = 200;
-    static int puckVelocityY = 100;
 
     // Update puck position based on velocity
     moverRect.x += puckVelocityX;
@@ -42,7 +39,7 @@ void Puck::Update()
     {
         // Reverse the X velocity to make the puck bounce back
         puckVelocityX = -puckVelocityX;
-        moverRect.x-=150;
+        moverRect.x-=150/2;
         // moverRect.y -= 130;
 
     }
@@ -51,13 +48,13 @@ void Puck::Update()
     {
         // Reverse the Y velocity to make the puck bounce back
         puckVelocityY = -puckVelocityY;
-                moverRect.y -= 150;
+                moverRect.y -= 150/2;
     }
     if (moverRect.x + moverRect.w < 0)
     {
         // Reverse the X velocity to make the puck bounce back
         puckVelocityX = -puckVelocityX;
-        moverRect.x+=150;
+        moverRect.x+=150/2;
         // moverRect.y -= 130;
 
     }
@@ -65,11 +62,23 @@ void Puck::Update()
     {
         // Reverse the X velocity to make the puck bounce back
         puckVelocityY = -puckVelocityY;
-        moverRect.y+=250;
+        moverRect.y+=250/2;
         // puck.moverRect.y -= 130;
 
     }
-
-
-
 }
+
+void Puck::update_colliding_player(){
+        // Reverse the X velocity to make the puck bounce back
+        puckVelocityX = -puckVelocityX;
+        moverRect.x-=150;
+        // moverRect.y -= 130;
+
+    }
+void Puck::update_colliding_ai(){
+        // Reverse the X velocity to make the puck bounce back
+        puckVelocityX = -puckVelocityX;
+        moverRect.x+=150;
+        // moverRect.y -= 130;
+
+    }

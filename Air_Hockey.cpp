@@ -14,22 +14,16 @@ using namespace std;
 Puck p;
 AIPaddle ai;
 PlayerPaddle p1;
-AiScore ais;
-Score ps;
-int aiscores=0;
-int scores=0;
+
 void drawObjects(SDL_Renderer* gRenderer, SDL_Texture* assets){
 
                     p.draw(gRenderer,assets);
                     p.Update();
                     ai.draw(gRenderer,assets);
-                    ai.Update_paddle();
+                    ai.Update_aipaddle();
+                    // ai.Update_paddle(gRenderer, assets, key);
                     p1.draw(gRenderer,assets);
-                    p1.Update_paddle();
-                    ais.draw(gRenderer,assets);
-                    ais.aiscore_set(aiscores);
-                    ps.draw(gRenderer,assets);
-                    ps.score_set(scores);
+                    // p1.Update_paddle();
                     // SDL_RenderCopy(gRenderer, assets, &paddle1.srcRect, &paddle1.moverRect);
                     // SDL_RenderCopy(gRenderer, assets, &paddle2.srcRect, &paddle2.moverRect);
                     // SDL_RenderCopy(gRenderer, assets, &p.srcRect, &p.moverRect);   
@@ -43,4 +37,28 @@ void createObject(int x, int y){
     std::cout<<"Mouse clicked at: "<<x<<" -- "<<y<<std::endl;
 
 }
+ void move( SDL_Renderer* gRenderer, SDL_Texture* assets, SDL_Keycode key){
+    p1.Update_paddle( gRenderer, assets,  key);
+ }
+
+ void is_collision(){
+    
+    if (p.moverRect.x +p.moverRect.w>= p1.moverRect.x && 
+    p1.moverRect.y + p1.moverRect.h >= p.moverRect.y && 
+    p.moverRect.y>=p1.moverRect.y){
+        std::cout<<"a\n";
+        p.update_colliding_player();
+        std::cout<<"b\n";
+
+
+    }
+    if (p.moverRect.x <= ai.moverRect.x + ai.moverRect.w && 
+        ai.moverRect.y<=p.moverRect.y && 
+        p.moverRect.y<= ai.moverRect.y + ai.moverRect.h ){
+        std::cout<<"c\n";
+        p.update_colliding_ai();
+        std::cout<<"d\n";
+
+    }
+ }
 

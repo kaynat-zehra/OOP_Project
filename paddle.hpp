@@ -5,10 +5,10 @@
 class Paddle: public Unit{
     public: 
     Paddle(){};
-    virtual void Update_paddle()=0;
-    void reset_paddles();
-    void set_velocity(double v);
-    
+    void Update_paddle(SDL_Renderer* gRenderer, SDL_Texture* assets, SDL_Keycode key);
+    // void reset_paddles();
+    // void set_velocity(double v);
+    // virtual bool update_collision()=0 ;
      
     // protected:
     // float x, y;

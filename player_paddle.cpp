@@ -14,15 +14,16 @@ void PlayerPaddle::LimitMovement() {
             moverRect.y = 600 - moverRect.h;
         }
     }
-void PlayerPaddle::Update_paddle(){
-    if (SDL_KEYDOWN){
-        if (SDLK_UP){
-            moverRect.y-=10;
-        }
-        else if (SDLK_DOWN){
-            moverRect.y+=10;
-        }
-    }
+void PlayerPaddle::Update_paddle(SDL_Renderer* gRenderer, SDL_Texture* assets, SDL_Keycode key){
+    // if (SDL_KEYDOWN){
+        if (key==SDLK_UP){
+            moverRect.y-=80;
     LimitMovement();
-    
+
+        }
+        else if (key==SDLK_DOWN){
+            moverRect.y+=80;
+    LimitMovement();
+        }
 }
+

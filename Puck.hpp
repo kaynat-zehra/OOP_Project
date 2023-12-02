@@ -9,10 +9,12 @@ class Puck : public Unit{
     // void set_coordinates(int x,int y);
     void reset_puck();
     void set_velocity(double v);
-    bool is_colliding();
+    void update_colliding_ai();
+    void update_colliding_player();
+
     private:
     Puck_struct puck;
     
-    double velocity_x;
-    double velocity_y;
+    // static int puckVelocityX;
+    // static int puckVelocityY;
 };

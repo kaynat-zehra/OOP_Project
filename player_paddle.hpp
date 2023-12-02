@@ -4,8 +4,10 @@
 class PlayerPaddle : public Paddle{
     public:
     PlayerPaddle();
-    void Update_paddle();
+    void Update_paddle(SDL_Renderer* gRenderer, SDL_Texture* assets, SDL_Keycode key);
     void LimitMovement();
+    // bool update_collision();
+
     private:
     Paddle_struct pp;
 };
