@@ -14,7 +14,7 @@ class Unit
     public:
     int frame;
     SDL_Rect srcRect, moverRect;
-        static SDL_Renderer* gRenderer;
+    static SDL_Renderer* gRenderer;
     static SDL_Texture* assets;
 
     public:

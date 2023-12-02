@@ -13,30 +13,25 @@ using namespace std;
 // Unit puck={{72,72,119,101},{506-82,293-60,70,50}};
 Puck p;
 AIPaddle ai;
-PlayerPaddle p1;
-AiScore ais;
-Score ps;
-int aiscores=0;
-int scores=0;
-void drawObjects(SDL_Renderer* gRenderer, SDL_Texture* assets){
+PlayerPaddle player;
+
+void drawObjects(SDL_Renderer* gRenderer, SDL_Texture* assets, SDL_Texture* assets2){
 
                     p.draw(gRenderer,assets);
                     p.Update();
                     ai.draw(gRenderer,assets);
                     ai.Update_aipaddle();
                     // ai.Update_paddle(gRenderer, assets, key);
-                    p1.draw(gRenderer,assets);
-                    ais.draw(gRenderer,assets);
-                    ais.aiscore_set(aiscores);
-                    ps.draw(gRenderer,assets);
-                    ps.score_set(scores);
-                    // p1.Update_paddle();
+                    player.draw(gRenderer,assets);
+                    p.call_goal_p(gRenderer,assets2, p.get_s_player());
+                    p.call_goal_ai(gRenderer,assets2, p.get_ai_player());
+
+                    // player.Update_paddle();
                     // SDL_RenderCopy(gRenderer, assets, &paddle1.srcRect, &paddle1.moverRect);
                     // SDL_RenderCopy(gRenderer, assets, &paddle2.srcRect, &paddle2.moverRect);
                     // SDL_RenderCopy(gRenderer, assets, &p.srcRect, &p.moverRect);   
         }
     
- 
 
 void createObject(int x, int y){
     Unit create_obj;
@@ -45,23 +40,29 @@ void createObject(int x, int y){
 
 }
  void move( SDL_Renderer* gRenderer, SDL_Texture* assets, SDL_Keycode key){
-    p1.Update_paddle( gRenderer, assets,  key);
+    player.Update_paddle( gRenderer, assets,  key);
  }
 
  void is_collision(){
     
-    if (p.moverRect.x +p.moverRect.w>= p1.moverRect.x && 
-    p1.moverRect.y + p1.moverRect.h >= p.moverRect.y && 
-    p.moverRect.y>=p1.moverRect.y){
+    if (p.moverRect.x +p.moverRect.w  >= player.moverRect.x && 
+    (player.moverRect.y + player.moverRect.h >= p.moverRect.y &&
+    p.moverRect.y>=player.moverRect.y))
+    // if (p.moverRect.x +p.moverRect.w == player.moverRect.x && 
+    // (player.moverRect.y + player.moverRect.h >= p.moverRect.y + p.moverRect.h || 
+    // player.moverRect.y + player.moverRect.h >= p.moverRect.y ||
+    // p.moverRect.y + p.moverRect.h >=player.moverRect.y ||
+    // p.moverRect.y>=player.moverRect.y))
+    {
         std::cout<<"a\n";
         p.update_colliding_player();
         std::cout<<"b\n";
 
 
     }
-    if (p.moverRect.x <= ai.moverRect.x + ai.moverRect.w && 
-        ai.moverRect.y<=p.moverRect.y && 
-        p.moverRect.y<= ai.moverRect.y + ai.moverRect.h ){
+    if (p.moverRect.x <= ai.moverRect.x  && 
+        (ai.moverRect.y + ai.moverRect.h >= p.moverRect.y &&
+    p.moverRect.y>=ai.moverRect.y)){
         std::cout<<"c\n";
         p.update_colliding_ai();
         std::cout<<"d\n";
@@ -69,3 +70,24 @@ void createObject(int x, int y){
     }
  }
 
+
+// void call_goal(SDL_Renderer* gRenderer, SDL_Texture* assets,int score){
+//     if (score==0){
+//         zero.draw(gRenderer, assets);
+//     }
+//     else if (score==1){
+//         one.draw(gRenderer, assets);
+//     }
+//     else if (score==2){
+//         two.draw(gRenderer, assets);
+//     }
+//     else if (score==3){
+//         three.draw(gRenderer, assets);
+//     }
+//     else if (score==4){
+//         four.draw(gRenderer, assets);
+//     }
+//     else if (score==5){
+//         five.draw(gRenderer, assets);
+//     }
+// }

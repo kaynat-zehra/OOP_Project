@@ -4,51 +4,17 @@
 #include "AI_Paddle.hpp"
 #include "player_paddle.hpp"
 #include "score.hpp"
-#include "aiscore.hpp"
 
 
 
-void drawObjects(SDL_Renderer* gRnderer, SDL_Texture* assets);
+void drawObjects(SDL_Renderer* gRnderer, SDL_Texture* assets,SDL_Texture* assets2);
 void createObject(int x, int y);
 void move(SDL_Renderer* gRenderer, SDL_Texture* assets, SDL_Keycode key);
-void is_collision();				
-// void updatePuckPosition();
+void is_collision();
+// void call_goal_p(SDL_Renderer* gRenderer, SDL_Texture* assets, int score);	
+// void call_goal_ai(SDL_Renderer* gRenderer, SDL_Texture* assets, int score);	
 
-// struct Unit{
-// SDL_Rect srcRect, moverRect;
-// };
+// Goal one(21, 15, 10, 50), two(60, 13, 29, 45), three(108, 12, 34, 46), four(162, 12, 29, 49),
+// five(203, 11, 32, 53), six(12, 85, 32, 53), seven(60, 82, 35, 52), eight(115, 81, 32, 50),
+// nine(164, 79, 29, 53), zero(211, 76, 31, 58);
 
-
-// struct Puck_struct{
-//     int x_coordinate;
-//     int y_coordinate;
-//     int radius{36};
-//     Puck_struct():x_coordinate(506-82),y_coordinate(293-60){};
-// };
-
-// class Puck{
-//     public:
-//     Puck(){};
-//     void Update(){
-//     puck.x_coordinate+=velocity_x;
-//     puck.y_coordinate+=velocity_y;
-//     if (puck.y_coordinate>=599 || puck.y_coordinate<=0){
-//         velocity_y*=-1;
-//     }
-//     // SDL_RenderCopy (gRender, assets, )
-//     // return *this;
-//     }
-//     int get_x_coordinate(){
-//         return puck.x_coordinate;
-//     }
-//     int get_y_coordinate(){
-//         return puck.y_coordinate;
-//     }
-//     void set_coordinates(int x,int y);
-//     void reset_puck();
-//     void set_velocity(double v);
-//     bool is_colliding();
-//     Puck_struct puck;
-//     double velocity_x;
-//     double velocity_y;
-// };

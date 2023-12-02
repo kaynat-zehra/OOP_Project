@@ -1,12 +1,12 @@
-#pragma once
 #include <iostream>
-#include "score_struct.hpp"
-#include "Unit.hpp"
 
-class Score:public Unit{
+class score{
+    int score=0;
     public:
-    Score();
-    void score_set(int scores);
-    private:
-    score_struct s;
+    int get_score(){
+        return score;
+    }
+    void increment_score(){
+        score++;
+    }
 };

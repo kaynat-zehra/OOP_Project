@@ -1,8 +1,7 @@
 #include <iostream>
+#include "Unit.hpp"
 
-struct score_struct{
-    int x_coordinate=28;
-    int y_coordinate=50;
-    int w=50;
-    int h=50;
-};
+// struct score_struct{
+// Unit one, two, three, four, five, six, seven, eight, nine, zero;
+
+// };
