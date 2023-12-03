@@ -74,7 +74,7 @@ bool Game::loadMedia()
         printf("Unable to run due to error: %s\n",SDL_GetError());
         success =false;
     }
-	bgMusic = Mix_LoadMUS( "background.wav" );
+	bgMusic = Mix_LoadMUS( "videoplayback.wav" );
 
 	if(bgMusic == NULL){
 		printf("Unable to load music: %s \n", Mix_GetError());
