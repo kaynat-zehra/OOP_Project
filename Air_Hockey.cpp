@@ -46,8 +46,8 @@ void createObject(int x, int y){
  void is_collision(){
     
     if (p.moverRect.x +p.moverRect.w  >= player.moverRect.x && 
-    (player.moverRect.y + player.moverRect.h >= p.moverRect.y &&
-    p.moverRect.y>=player.moverRect.y))
+    (player.moverRect.y + player.moverRect.h/2 >= p.moverRect.y &&
+    p.moverRect.y>=player.moverRect.y-player.moverRect.h/2))
     // if (p.moverRect.x +p.moverRect.w == player.moverRect.x && 
     // (player.moverRect.y + player.moverRect.h >= p.moverRect.y + p.moverRect.h || 
     // player.moverRect.y + player.moverRect.h >= p.moverRect.y ||
