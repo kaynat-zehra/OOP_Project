@@ -3,7 +3,7 @@ Air Hockey game
 
 Project UML Diagram Link: https://app.moqups.com/QL37FybhN4PEcriMZYKmMy5Dlp5YZVeL/view/page/a8bfb0d3e
 
-2. Build using CMake (a more modern and portable approach)
+2. Build using CMake:
 Please ensure you have gcc and cmake installed. You can check this by opening Powershell and typing:
 
 cmake --version this should output the version of CMake
@@ -18,8 +18,8 @@ Please don't install SDL upfront. If you have already installed SDL, try removin
 
 Run the following commands on Powershell on Windows or terminal on Linux and MacOS.
 
-run git clone https://github.com/habib-university/CS224-HW1-Fall2023.git
-cd CS224-HW1-Fall2023
+run git clone https://github.com/kaynat-zehra/OOP_Project.git
+cd CS224-team6-Project-Fall2023
 mkdir build
 cd build
 On Linux use cmake ... On windows use cmake -G "MinGW Makefiles" .. if you install gcc via MSYS2. If you installed gcc via strawberry perl, use cmake -G "Unix Makefiles" ..
