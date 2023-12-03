@@ -47,6 +47,11 @@ bool Game::init()
 					printf( "SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError() );
 					success = false;
 				}
+				if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 ) < 0 )
+				{
+					printf( "SDL_mixer could not initialize! SDL_mixer Error: %s\n", Mix_GetError() );
+					success = false;
+				}
 
 			}
 		}
@@ -69,6 +74,12 @@ bool Game::loadMedia()
         printf("Unable to run due to error: %s\n",SDL_GetError());
         success =false;
     }
+	bgMusic = Mix_LoadMUS( "background.wav" );
+
+	if(bgMusic == NULL){
+		printf("Unable to load music: %s \n", Mix_GetError());
+		success = false;
+	}
 	return success;
 }
 
@@ -87,8 +98,11 @@ void Game::close()
 	SDL_DestroyWindow( gWindow );
 	gWindow = NULL;
 	gRenderer = NULL;
+	Mix_FreeMusic(bgMusic);
+	bgMusic = NULL;
 	//Quit SDL subsystems
 	IMG_Quit();
+	Mix_Quit();
 	SDL_Quit();
 }
 
@@ -141,6 +155,11 @@ void Game::run( )
 			// 	SDL_GetMouseState(&xMouse,&yMouse);
 			// 	createObject(xMouse, yMouse);
 			// }
+			if( Mix_PlayingMusic() == 0 )
+				{
+					//Play the music
+					Mix_PlayMusic( bgMusic, 2 );
+				}
 			if (gamestate == 0) {
                 if (e.type == SDL_MOUSEBUTTONDOWN) {
                     int xMouse, yMouse;
@@ -153,7 +172,6 @@ void Game::run( )
 			// if(e.type == SDL_KEYDOWN){
 			if (gamestate==1){
 			if(e.type == SDL_MOUSEBUTTONDOWN){
-			//this is a good location to add pigeon in linked list.
 				int xMouse, yMouse;
 				SDL_GetMouseState(&xMouse,&yMouse);
 				createObject(xMouse, yMouse);
