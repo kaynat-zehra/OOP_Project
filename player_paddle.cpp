@@ -16,7 +16,7 @@ void PlayerPaddle::LimitMovement() {
             moverRect.y = 600 - moverRect.h;
         }
     }
-void PlayerPaddle::Update_paddle(SDL_Renderer* gRenderer, SDL_Texture* assets, SDL_Keycode key){
+void PlayerPaddle::Update(SDL_Renderer* gRenderer, SDL_Texture* assets, SDL_Keycode key){
     // if (SDL_KEYDOWN){
         if (key==SDLK_UP){
             moverRect.y-=80;

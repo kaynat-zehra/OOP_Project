@@ -2,6 +2,7 @@
 #pragma once
 #include <SDL.h>
 #include <SDL_image.h>
+#include <SDL_mixer.h>
 #include <stdio.h>
 #include <iostream>
 #include <string>
@@ -21,11 +22,15 @@ class Game{
 
     //Current displayed texture
     SDL_Texture* gTexture = NULL;
+    SDL_Texture* gTexture1 = NULL;
+    SDL_Texture* gTexture_lose = NULL;
+    SDL_Texture* gTexture_win = NULL;
+
     //global reference to png image sheets
     SDL_Texture* assets=NULL;
     SDL_Texture* assets2=NULL;
-
-    
+    Mix_Music *bgMusic = NULL;
+    int gamestate=0;
 
 public:
 

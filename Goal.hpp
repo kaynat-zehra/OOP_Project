@@ -10,6 +10,8 @@ class Goal : public Unit{
         srcRect = {x,y,w,h};
         moverRect = {550, 55, w, h};
     }
+    void Update(){
+    }
     void set_moverRect(int x, int y){
         moverRect={x,y,width,height};
     }

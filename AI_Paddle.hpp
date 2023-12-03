@@ -6,7 +6,7 @@
 class AIPaddle : public Paddle{
     public:
     AIPaddle();
-    void Update_aipaddle();
+    void Update();
     Paddle_struct ai_paddle;
     // bool is_collision();
     

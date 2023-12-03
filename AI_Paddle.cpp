@@ -10,7 +10,7 @@ AIPaddle::AIPaddle(){
 
 }
 
-void AIPaddle::Update_aipaddle(){
+void AIPaddle::Update(){
     // moverRect.x += 0;
     int speed[2] = {50, -50};
     int r = rand() %2;

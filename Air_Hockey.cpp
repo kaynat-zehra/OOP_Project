@@ -20,34 +20,46 @@ void drawObjects(SDL_Renderer* gRenderer, SDL_Texture* assets, SDL_Texture* asse
                     p.draw(gRenderer,assets);
                     p.Update();
                     ai.draw(gRenderer,assets);
-                    ai.Update_aipaddle();
+                    ai.Update();
                     // ai.Update_paddle(gRenderer, assets, key);
                     player.draw(gRenderer,assets);
-                    p.call_goal_p(gRenderer,assets2, p.get_s_player());
-                    p.call_goal_ai(gRenderer,assets2, p.get_ai_player());
+                    p.call_goal_p(gRenderer,assets2, p.get_ai_player());
+                    p.call_goal_ai(gRenderer,assets2, p.get_s_player());
 
                     // player.Update_paddle();
                     // SDL_RenderCopy(gRenderer, assets, &paddle1.srcRect, &paddle1.moverRect);
                     // SDL_RenderCopy(gRenderer, assets, &paddle2.srcRect, &paddle2.moverRect);
                     // SDL_RenderCopy(gRenderer, assets, &p.srcRect, &p.moverRect);   
         }
-    
+char win_or_lose(){
+    char z='\0';
+    Unit create_obj;
+    std::cout<<p.get_ai_player()<<'\n';
+    std::cout<<p.get_s_player()<<'\n';
+
+    if (p.get_ai_player()==3){
+        return 'a';
+    }
+    else if (p.get_s_player()==3){
+        return 'p';
+    }
+    return z;
+
+}   
 
 void createObject(int x, int y){
-    Unit create_obj;
     
     std::cout<<"Mouse clicked at: "<<x<<" -- "<<y<<std::endl;
-
-}
+    }
  void move( SDL_Renderer* gRenderer, SDL_Texture* assets, SDL_Keycode key){
-    player.Update_paddle( gRenderer, assets,  key);
+    player.Update( gRenderer, assets,  key);
  }
 
  void is_collision(){
     
     if (p.moverRect.x +p.moverRect.w  >= player.moverRect.x && 
-    (player.moverRect.y + player.moverRect.h >= p.moverRect.y &&
-    p.moverRect.y>=player.moverRect.y))
+    (player.moverRect.y + player.moverRect.h/2 >= p.moverRect.y &&
+    p.moverRect.y>=player.moverRect.y-player.moverRect.h/2))
     // if (p.moverRect.x +p.moverRect.w == player.moverRect.x && 
     // (player.moverRect.y + player.moverRect.h >= p.moverRect.y + p.moverRect.h || 
     // player.moverRect.y + player.moverRect.h >= p.moverRect.y ||
