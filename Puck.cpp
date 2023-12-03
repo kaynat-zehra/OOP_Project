@@ -62,7 +62,7 @@ int Puck::get_ai_player(){
     return s_ai.get_score();
 }
     static int puckVelocityX = 20*2;
-    static int puckVelocityY = 10*2;
+    static int puckVelocityY = 0; //10*2;
 
 void Puck::reset_puck(){
 
