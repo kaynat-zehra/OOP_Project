@@ -61,16 +61,16 @@ int Puck::get_s_player(){
 int Puck::get_ai_player(){
     return s_ai.get_score();
 }
-    static int puckVelocityX = 20*2;
-    static int puckVelocityY = 0; //10*2;
+    static int puckVelocityX = 20*3;
+    static int puckVelocityY = 0;//10*2;
 
 void Puck::reset_puck(){
 
     moverRect = {500-80+2,300-60+2,119,101};
     // puckVelocityX = 0;
     // puckVelocityY = 0;
-    int arr[2] = {20,-20};
-    int arr2[2] = {10,-10};
+    int arr[2] = {20*3,-20*3};
+    int arr2[2] = {10*3,-10*3};
     int random = rand()%2;
     int random1 = rand()%2;
     puckVelocityX = arr[random];
@@ -92,16 +92,16 @@ void Puck::Update()
         // Reverse the X velocity to make the puck bounce back
         std::cout<<"score\n";
             moverRect.x += 200;
-            if (moverRect.x>1600){
+            // if (moverRect.x>1600){
                     reset_puck();
         s_player.increment_score();
         std::cout << "ai score: "<< s_player.get_score() << "\n";
-            }
+            // }
         }
         else 
             {
         puckVelocityX = -puckVelocityX;
-        moverRect.x-=15*2;
+        moverRect.x-=15*3;
         std::cout << "It works\n"; 
         }
 
@@ -111,14 +111,14 @@ void Puck::Update()
     {
         // Reverse the Y velocity to make the puck bounce back
         puckVelocityY = -puckVelocityY;
-                moverRect.y -= 15*2;
+                moverRect.y -= 15*3;
     }
     if (moverRect.x < 0) // ai goal
     {
         if (moverRect.y <=220 || moverRect.y + moverRect.h>=380){
         // Reverse the X velocity to make the puck bounce back
         puckVelocityX = -puckVelocityX;
-        moverRect.x+=15*2;
+        moverRect.x+=15*3;
         std::cout << "It works\n"; 
         // moverRect.y -= 130;
         }
@@ -127,11 +127,11 @@ void Puck::Update()
             {
         std::cout<<"score\n";
             moverRect.x -= 200;
-            if (moverRect.x<-600){
+            // if (moverRect.x<-600){
             reset_puck();
             s_ai.increment_score();
             std::cout << "player score: "<< s_ai.get_score() << "\n";
-            }
+            // }
             }
         // Reverse the X velocity to make the puck bounce back
         // puckVelocityX = -puckVelocityX;
@@ -143,7 +143,7 @@ void Puck::Update()
     {
         // Reverse the X velocity to make the puck bounce back
         puckVelocityY = -puckVelocityY;
-        moverRect.y+=25*2;
+        moverRect.y+=25*3;
         // puck.moverRect.y -= 130;
 
     }
@@ -152,14 +152,14 @@ void Puck::Update()
 void Puck::update_colliding_player(){
         // Reverse the X velocity to make the puck bounce back
         puckVelocityX = -puckVelocityX;
-        moverRect.x-=15*2;
+        moverRect.x-=15*3;
         // moverRect.y -= 130;
 
     }
 void Puck::update_colliding_ai(){
         // Reverse the X velocity to make the puck bounce back
         puckVelocityX = -puckVelocityX;
-        moverRect.x+=15*2;
+        moverRect.x+=15*3;
         // moverRect.y -= 130;
 
     }
