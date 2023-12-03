@@ -6,7 +6,7 @@
 #include "score.hpp"
 
 
-
+char win_or_lose();
 void drawObjects(SDL_Renderer* gRnderer, SDL_Texture* assets,SDL_Texture* assets2);
 void createObject(int x, int y);
 void move(SDL_Renderer* gRenderer, SDL_Texture* assets, SDL_Keycode key);

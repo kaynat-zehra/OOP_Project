@@ -23,6 +23,8 @@ class Game{
     //Current displayed texture
     SDL_Texture* gTexture = NULL;
     SDL_Texture* gTexture1 = NULL;
+    SDL_Texture* gTexture_lose = NULL;
+    SDL_Texture* gTexture_win = NULL;
 
     //global reference to png image sheets
     SDL_Texture* assets=NULL;

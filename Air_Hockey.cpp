@@ -31,14 +31,26 @@ void drawObjects(SDL_Renderer* gRenderer, SDL_Texture* assets, SDL_Texture* asse
                     // SDL_RenderCopy(gRenderer, assets, &paddle2.srcRect, &paddle2.moverRect);
                     // SDL_RenderCopy(gRenderer, assets, &p.srcRect, &p.moverRect);   
         }
-    
+char win_or_lose(){
+    char z='\0';
+    Unit create_obj;
+    std::cout<<p.get_ai_player()<<'\n';
+    std::cout<<p.get_s_player()<<'\n';
+
+    if (p.get_ai_player()==3){
+        return 'a';
+    }
+    else if (p.get_s_player()==3){
+        return 'p';
+    }
+    return z;
+
+}   
 
 void createObject(int x, int y){
-    Unit create_obj;
     
     std::cout<<"Mouse clicked at: "<<x<<" -- "<<y<<std::endl;
-
-}
+    }
  void move( SDL_Renderer* gRenderer, SDL_Texture* assets, SDL_Keycode key){
     player.Update( gRenderer, assets,  key);
  }

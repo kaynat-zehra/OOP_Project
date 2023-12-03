@@ -69,7 +69,10 @@ bool Game::loadMedia()
 	assets2 = loadTexture("numbers.png");
     gTexture1 = loadTexture("startscreen.png");
     gTexture = loadTexture("background.png");
-	if(assets==NULL || gTexture1==NULL || assets2==NULL || gTexture==NULL)
+	gTexture_lose=loadTexture("screen_lose.png");
+	gTexture_win=loadTexture("screen_win.png");
+
+	if(assets==NULL || gTexture1==NULL || assets2==NULL || gTexture==NULL || gTexture_lose==NULL || gTexture_win==NULL)
     {
         printf("Unable to run due to error: %s\n",SDL_GetError());
         success =false;
@@ -92,6 +95,8 @@ void Game::close()
 	assets2=NULL;
 	SDL_DestroyTexture(gTexture);
 	SDL_DestroyTexture(gTexture1);
+	SDL_DestroyTexture(gTexture_lose);
+	SDL_DestroyTexture(gTexture_win);
 	
 	//Destroy window
 	SDL_DestroyRenderer( gRenderer );
@@ -171,15 +176,32 @@ void Game::run( )
                 }}
 			// if(e.type == SDL_KEYDOWN){
 			if (gamestate==1){
+
+				char s= win_or_lose();
+				if (s=='a'){
+					gamestate=2;
+				}	
+				else if (s=='p'){
+					gamestate=3;
+				}
 			if(e.type == SDL_MOUSEBUTTONDOWN){
 				int xMouse, yMouse;
 				SDL_GetMouseState(&xMouse,&yMouse);
 				createObject(xMouse, yMouse);
-			}
+				// char s= win_or_lose();
+				// if (s=='a'){
+				// 	gamestate=2;
+				// }	
+				// else if (s=='p'){
+				// 	gamestate=3;
+				}
+				
 			if(e.type == SDL_KEYDOWN){	
 						move(gRenderer, assets, e.key.keysym.sym);	
-				}}
-		}
+				}
+				}
+			}
+		
 		if (gamestate==0){
 		SDL_RenderCopy(gRenderer, gTexture1, NULL, NULL);//Draws background to renderer
 
@@ -191,11 +213,20 @@ void Game::run( )
 		
 		drawObjects(gRenderer, assets,assets2);
 		is_collision();}
+		else if (gamestate==2){
+			SDL_RenderCopy(gRenderer, gTexture_win, NULL, NULL);//Draws background to renderer
+
+		}
+		else if (gamestate==3){
+			SDL_RenderCopy(gRenderer, gTexture_lose, NULL, NULL);//Draws background to renderer
+
+		}
+
 		// updatePuckPosition();
 		//****************************************************************
     	SDL_RenderPresent(gRenderer); //displays the updated renderer
 
 	    SDL_Delay(200);	//causes sdl engine to delay for specified miliseconds
 	}
-			
-}
+}	
+
