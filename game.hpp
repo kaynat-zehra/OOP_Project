@@ -21,11 +21,13 @@ class Game{
 
     //Current displayed texture
     SDL_Texture* gTexture = NULL;
+    SDL_Texture* gTexture1 = NULL;
+
     //global reference to png image sheets
     SDL_Texture* assets=NULL;
     SDL_Texture* assets2=NULL;
 
-    
+    int gamestate=0;
 
 public:
 

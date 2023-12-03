@@ -62,8 +62,9 @@ bool Game::loadMedia()
 	
 	assets = loadTexture("objects2.png");
 	assets2 = loadTexture("numbers.png");
+    gTexture1 = loadTexture("startscreen.png");
     gTexture = loadTexture("background.png");
-	if(assets==NULL || gTexture==NULL)
+	if(assets==NULL || gTexture1==NULL || assets2==NULL || gTexture==NULL)
     {
         printf("Unable to run due to error: %s\n",SDL_GetError());
         success =false;
@@ -79,6 +80,7 @@ void Game::close()
 	SDL_DestroyTexture(assets2);
 	assets2=NULL;
 	SDL_DestroyTexture(gTexture);
+	SDL_DestroyTexture(gTexture1);
 	
 	//Destroy window
 	SDL_DestroyRenderer( gRenderer );
@@ -139,8 +141,17 @@ void Game::run( )
 			// 	SDL_GetMouseState(&xMouse,&yMouse);
 			// 	createObject(xMouse, yMouse);
 			// }
-			
+			if (gamestate == 0) {
+                if (e.type == SDL_MOUSEBUTTONDOWN) {
+                    int xMouse, yMouse;
+                    SDL_GetMouseState(&xMouse, &yMouse);
+                    createObject(xMouse, yMouse);
+					if (xMouse>=410 && xMouse<=580 && yMouse>=420 && yMouse<=500){
+						gamestate=1;
+					}
+                }}
 			// if(e.type == SDL_KEYDOWN){
+			if (gamestate==1){
 			if(e.type == SDL_MOUSEBUTTONDOWN){
 			//this is a good location to add pigeon in linked list.
 				int xMouse, yMouse;
@@ -149,15 +160,19 @@ void Game::run( )
 			}
 			if(e.type == SDL_KEYDOWN){	
 						move(gRenderer, assets, e.key.keysym.sym);	
-				}
+				}}
 		}
+		if (gamestate==0){
+		SDL_RenderCopy(gRenderer, gTexture1, NULL, NULL);//Draws background to renderer
 
-		SDL_RenderClear(gRenderer); //removes everything from renderer
+		}
+		else if (gamestate==1)
+		{SDL_RenderClear(gRenderer); //removes everything from renderer
 		SDL_RenderCopy(gRenderer, gTexture, NULL, NULL);//Draws background to renderer
 		//***********************draw the objects here********************
 		
 		drawObjects(gRenderer, assets,assets2);
-		is_collision();
+		is_collision();}
 		// updatePuckPosition();
 		//****************************************************************
     	SDL_RenderPresent(gRenderer); //displays the updated renderer
