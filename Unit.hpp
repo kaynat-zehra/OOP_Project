@@ -17,8 +17,8 @@ class Unit
     static SDL_Renderer* gRenderer;
     static SDL_Texture* assets;
 
-    public:
     Unit(); //constructor
+    virtual void Update(){}
     void draw(SDL_Renderer* gRenderer, SDL_Texture* assets); 
     
 };

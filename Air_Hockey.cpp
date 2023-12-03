@@ -20,7 +20,7 @@ void drawObjects(SDL_Renderer* gRenderer, SDL_Texture* assets, SDL_Texture* asse
                     p.draw(gRenderer,assets);
                     p.Update();
                     ai.draw(gRenderer,assets);
-                    ai.Update_aipaddle();
+                    ai.Update();
                     // ai.Update_paddle(gRenderer, assets, key);
                     player.draw(gRenderer,assets);
                     p.call_goal_p(gRenderer,assets2, p.get_ai_player());
@@ -40,7 +40,7 @@ void createObject(int x, int y){
 
 }
  void move( SDL_Renderer* gRenderer, SDL_Texture* assets, SDL_Keycode key){
-    player.Update_paddle( gRenderer, assets,  key);
+    player.Update( gRenderer, assets,  key);
  }
 
  void is_collision(){
