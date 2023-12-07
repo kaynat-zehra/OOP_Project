@@ -8,6 +8,7 @@
 #include <string>
 #include <stdlib.h>
 #include <time.h>
+#include "Air_Hockey.hpp"
 
 class Game{
     //Screen dimension constants
@@ -31,6 +32,9 @@ class Game{
     SDL_Texture* assets2=NULL;
     Mix_Music *bgMusic = NULL;
     int gamestate=0;
+    
+protected:
+AirHockey AirHockey;
 
 public:
 

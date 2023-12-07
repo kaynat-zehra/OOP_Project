@@ -7,21 +7,17 @@
 class Puck : public Unit{
     public:
     Puck();
-    void Update();
-    // void set_coordinates(int x,int y);
-    void reset_puck();
-    void set_velocity(double v);
-    void update_colliding_ai();
-    void update_colliding_player();
-    void score();
-    void call_goal_p(SDL_Renderer* gRenderer, SDL_Texture* assets,int score);
-    void call_goal_ai(SDL_Renderer* gRenderer, SDL_Texture* assets,int score);
-    int get_s_player();
-    int get_ai_player();
+    void Update(); // collision handling
+    void reset_puck(); // reset puck to original position
+    void update_colliding_ai(); // check for collision with ai paddle
+    void update_colliding_player(); // check for collision with player paddle
+    void call_goal_p(SDL_Renderer* gRenderer, SDL_Texture* assets,int score); // draw player score
+    void call_goal_ai(SDL_Renderer* gRenderer, SDL_Texture* assets,int score); // draw AI score
+    int get_s_player(); // returns player score
+    int get_ai_player(); // returns ai sore
+    
     private:
     Puck_struct puck;
     
-    // static int puckVelocityX;
-    // static int puckVelocityY;
 };
 
