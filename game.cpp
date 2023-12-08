@@ -1,5 +1,4 @@
 #include "game.hpp"
-#include "Air_Hockey.hpp"
 bool Game::init()
 {
 	//Initialization flag
@@ -153,13 +152,6 @@ void Game::run( )
 			{
 				quit = true;
 			}
-
-			// if(e.type == SDL_MOUSEBUTTONDOWN){
-			// //this is a good location to add pigeon in linked list.
-			// 	int xMouse, yMouse;
-			// 	SDL_GetMouseState(&xMouse,&yMouse);
-			// 	createObject(xMouse, yMouse);
-			// }
 			if( Mix_PlayingMusic() == 0 )
 				{
 					//Play the music
@@ -169,60 +161,64 @@ void Game::run( )
                 if (e.type == SDL_MOUSEBUTTONDOWN) {
                     int xMouse, yMouse;
                     SDL_GetMouseState(&xMouse, &yMouse);
-                    createObject(xMouse, yMouse);
+                    AirHockey.createObject(xMouse, yMouse);
 					if (xMouse>=410 && xMouse<=580 && yMouse>=420 && yMouse<=500){
 						gamestate=1;
 					}
                 }}
-			// if(e.type == SDL_KEYDOWN){
 			if (gamestate==1){
-
-				char s= win_or_lose();
+				std::cout << "gamestate 1\n";
+				char s= AirHockey.win_or_lose(); // checks if player wins or loses.
+				std::cout<<s<<'\n';
 				if (s=='a'){
-					gamestate=2;
+					gamestate=2; // changing game state to 2 if ai wins
+					std::cout << "win or lose A\n";
+					break;
 				}	
-				else if (s=='p'){
+				else if (s=='p'){ // changing game state to 2 if ai wins
+					std::cout << "win or lose p\n";
 					gamestate=3;
+					break;
 				}
-			if(e.type == SDL_MOUSEBUTTONDOWN){
+				else{
+					gamestate=1;
+				}
+			if(e.type == SDL_MOUSEBUTTONDOWN){ // checks for mouse clicks
 				int xMouse, yMouse;
 				SDL_GetMouseState(&xMouse,&yMouse);
-				createObject(xMouse, yMouse);
-				// char s= win_or_lose();
-				// if (s=='a'){
-				// 	gamestate=2;
-				// }	
-				// else if (s=='p'){
-				// 	gamestate=3;
+				AirHockey.createObject(xMouse, yMouse);
 				}
 				
 			if(e.type == SDL_KEYDOWN){	
-						move(gRenderer, assets, e.key.keysym.sym);	
-				}
+					AirHockey.move(gRenderer, assets, e.key.keysym.sym);	
 				}
 			}
+		}
 		
-		if (gamestate==0){
+		if (gamestate==0){ // initializes start screen
 		SDL_RenderCopy(gRenderer, gTexture1, NULL, NULL);//Draws background to renderer
 
 		}
-		else if (gamestate==1)
-		{SDL_RenderClear(gRenderer); //removes everything from renderer
-		SDL_RenderCopy(gRenderer, gTexture, NULL, NULL);//Draws background to renderer
+		else if (gamestate==1)  // intializes game screen
+		{
+			SDL_RenderClear(gRenderer); //removes everything from renderer
+			SDL_RenderCopy(gRenderer, gTexture, NULL, NULL);//Draws background to renderer
 		//***********************draw the objects here********************
 		
-		drawObjects(gRenderer, assets,assets2);
-		is_collision();}
-		else if (gamestate==2){
+			AirHockey.drawObjects(gRenderer, assets,assets2);
+			AirHockey.is_collision();
+		}
+		else if (gamestate==2){ // intialises you lose screen
+			std::cout << "Game state 2\n";
 			SDL_RenderCopy(gRenderer, gTexture_win, NULL, NULL);//Draws background to renderer
 
 		}
-		else if (gamestate==3){
+		else if (gamestate==3){ // initalises you win screen
+			std::cout << "game tate 3\n";
 			SDL_RenderCopy(gRenderer, gTexture_lose, NULL, NULL);//Draws background to renderer
 
 		}
 
-		// updatePuckPosition();
 		//****************************************************************
     	SDL_RenderPresent(gRenderer); //displays the updated renderer
 

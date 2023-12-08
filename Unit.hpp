@@ -1,14 +1,7 @@
+#pragma once
 #include <iostream>
 #include "SDL.h"
-// #include "drawing.hpp"
-#pragma once
-// class Drawing{
-//     public:
-//         //The window renderer
-//     static SDL_Renderer* gRenderer;
-//     //global reference to png image sheets
-//     static SDL_Texture* assets;
-// };
+
 class Unit
 {
     public:
@@ -18,7 +11,9 @@ class Unit
     static SDL_Texture* assets;
 
     Unit(); //constructor
-    virtual void Update(){}
-    void draw(SDL_Renderer* gRenderer, SDL_Texture* assets); 
+    virtual void Update(){
+        std::cout << "This is unit update\n";
+    }; // implemented in Puck, paddle
+    void draw(SDL_Renderer* gRenderer, SDL_Texture* assets); // function for drawing images on the screen
     
 };

@@ -4,8 +4,6 @@
 
 Unit:: Unit() {};
 
-
-
 //fully implemented draw function
 void Unit::draw(SDL_Renderer* gRenderer, SDL_Texture* assets)
 {

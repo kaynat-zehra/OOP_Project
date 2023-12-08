@@ -5,32 +5,13 @@ class Goal : public Unit{
     int height=0;
     public:
 
-    Goal(){};
-    Goal(int x, int y, int w, int h):width(w),height(h){
+    Goal(){}; // constructor
+    Goal(int x, int y, int w, int h):width(w),height(h){ // setting coordinates
         srcRect = {x,y,w,h};
         moverRect = {550, 55, w, h};
     }
-    void Update(){
-    }
-    void set_moverRect(int x, int y){
+    void Update(){};
+    void set_moverRect(int x, int y){ // sets moverRect coordinates
         moverRect={x,y,width,height};
     }
-    // void Goal_ai(int x, int y, int w, int h){
-    //     srcRect = {x,y,w,h};
-    //     moverRect = {425, 55, w, h};
-    // }
-
 };
-// class Goal2 : public Unit{
-//     public:
-//     Goal2(){};
-//     Goal2(int x, int y, int w, int h){
-//         srcRect = {x,y,w,h};
-//         moverRect = {425, 55, w, h};
-//     }
-//     // void Goal_ai(int x, int y, int w, int h){
-//     //     srcRect = {x,y,w,h};
-//     //     moverRect = {425, 55, w, h};
-//     // }
-// };
-

@@ -8,8 +8,6 @@ PlayerPaddle::PlayerPaddle(){
 }
 void PlayerPaddle::LimitMovement() {
     if (moverRect.y + moverRect.h/5 <= 0) {
-            // moverRect.y = 0+moverRect.h;
-            // AIvelocity = -AIvelocity;
             moverRect.y += moverRect.h;
         }
         if (moverRect.y + moverRect.h >= 600) {
@@ -17,13 +15,12 @@ void PlayerPaddle::LimitMovement() {
         }
     }
 void PlayerPaddle::Update(SDL_Renderer* gRenderer, SDL_Texture* assets, SDL_Keycode key){
-    // if (SDL_KEYDOWN){
-        if (key==SDLK_UP){
+        if (key==SDLK_UP){ // checks if up arrow key is pressed
             moverRect.y-=80;
     LimitMovement();
 
         }
-        else if (key==SDLK_DOWN){
+        else if (key==SDLK_DOWN){ // checks if down arrow key is pressed
             moverRect.y+=80;
     LimitMovement();
         }
