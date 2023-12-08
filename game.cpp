@@ -206,6 +206,7 @@ void Game::run( )
 		//***********************draw the objects here********************
 		
 			AirHockey.drawObjects(gRenderer, assets,assets2);
+			AirHockey.aimove(gRenderer, assets, e.key.keysym.sym);
 			AirHockey.is_collision();
 		}
 		else if (gamestate==2){ // intialises you lose screen

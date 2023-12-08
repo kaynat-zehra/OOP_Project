@@ -6,6 +6,6 @@
 class AIPaddle : public Paddle{
     public:
     AIPaddle(); //constructor
-    void Update(); // updates the position of ai paddle
+    void Update(SDL_Renderer* gRenderer, SDL_Texture* assets, SDL_Keycode key); // updates the position of ai paddle
     Paddle_struct ai_paddle;
 };

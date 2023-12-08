@@ -5,5 +5,5 @@
 class Paddle: public Unit{
     public: 
     Paddle(){}; // constructor
-    virtual void Update_paddle(SDL_Renderer* gRenderer, SDL_Texture* assets, SDL_Keycode key) {};
+    virtual void Update(SDL_Renderer* gRenderer, SDL_Texture* assets, SDL_Keycode key) =0;
 };

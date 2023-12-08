@@ -14,7 +14,6 @@ void AirHockey::drawObjects(SDL_Renderer* gRenderer, SDL_Texture* assets, SDL_Te
             p.draw(gRenderer,assets);
             p.Update();
             ai.draw(gRenderer,assets);
-            ai.Update();
             player.draw(gRenderer,assets);
             p.call_goal_p(gRenderer,assets2, p.get_ai_player());
             p.call_goal_ai(gRenderer,assets2, p.get_s_player());
@@ -27,16 +26,18 @@ char AirHockey::win_or_lose(){
     std::cout<<p.get_ai_player()<<'\n';
     std::cout<<p.get_s_player()<<'\n';
 
-    if (p.get_ai_player()==3){ // checks if ai score equals to 3
+    if (p.get_ai_player()==2){ // checks if ai score equals to 3
         return 'a';
     }
-    else if (p.get_s_player()==3){ // checks if player score equals to 3
+    else if (p.get_s_player()==2){ // checks if player score equals to 3
         return 'p';
     }
     return z;
 
 }   
-
+void AirHockey::aimove( SDL_Renderer* gRenderer, SDL_Texture* assets, SDL_Keycode key){
+    ai.Update( gRenderer, assets,  key);
+ }
 void AirHockey::createObject(int x, int y){
     
     std::cout<<"Mouse clicked at: "<<x<<" -- "<<y<<std::endl;

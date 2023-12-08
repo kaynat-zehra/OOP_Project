@@ -10,6 +10,7 @@ public:
 char win_or_lose(); // returns the result of the game
 void drawObjects(SDL_Renderer* gRnderer, SDL_Texture* assets,SDL_Texture* assets2);
 void createObject(int x, int y);
+void aimove( SDL_Renderer* gRenderer, SDL_Texture* assets, SDL_Keycode key);
 void move(SDL_Renderer* gRenderer, SDL_Texture* assets, SDL_Keycode key);
 void is_collision(); // updating puck position and velocity on basis of a score. 
 

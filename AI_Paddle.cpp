@@ -9,7 +9,7 @@ AIPaddle::AIPaddle(){ // setting the coordinates
 
 }
 
-void AIPaddle::Update(){ 
+void AIPaddle::Update(SDL_Renderer* gRenderer, SDL_Texture* assets, SDL_Keycode key){ 
     int speed[2] = {50, -50};
     int r = rand() %2; // the paddle startes in a random direction
     static int AIvelocity = speed[r];
